@@ -19,6 +19,19 @@ namespace ConvertersDemoApp
         public App()
         {
             InitializeComponent();
+        }
+
+        public override Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
+        {
+            NavigationService.Navigate(typeof(Views.MainPage));
+            return Task.CompletedTask;
+        }
+
+        //Original code commented out because Splash screen is not being used in this app.
+
+        /*public App()
+        {
+            InitializeComponent();
             SplashFactory = (e) => new Views.Splash(e);
 
             #region App settings
@@ -42,7 +55,7 @@ namespace ConvertersDemoApp
 
             NavigationService.Navigate(typeof(Views.MainPage));
             await Task.CompletedTask;
-        }
+        }*/
     }
 }
 
